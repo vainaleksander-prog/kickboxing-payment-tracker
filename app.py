@@ -5,6 +5,28 @@ st.set_page_config(
     page_icon="🥊",
     layout="wide"
 )
+# Rakenduse paroolikaitse
+def kontrolli_sisselogimist():
+    if st.session_state.get("sisse_logitud", False):
+        return True
+
+    st.title("🥊 Kickboxing Payment Tracker")
+    st.subheader("🔐 Sisselogimine")
+
+    parool = st.text_input("Sisesta parool", type="password")
+
+    if st.button("Logi sisse"):
+        if parool == st.secrets["APP_PASSWORD"]:
+            st.session_state["sisse_logitud"] = True
+            st.rerun()
+        else:
+            st.error("Vale parool!")
+
+    return False
+
+
+if not kontrolli_sisselogimist():
+    st.stop()
 # Äpi kujundus
 st.markdown("""
 <style>
