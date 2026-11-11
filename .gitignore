@@ -1,0 +1,6 @@
+kickboxing.db
+*.db
+__pycache__/
+.venv/
+.env
+.streamlit/secrets.toml.vscode/
