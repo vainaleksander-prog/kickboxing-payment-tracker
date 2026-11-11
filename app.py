@@ -497,7 +497,8 @@ for opilase_id, opilase_nimi in naidatavad_opilased:
                     label_visibility="collapsed"
                 )
 
-            salvesta_makse(opilase_id, valitud_kuu, makstud)
+            if makstud != kontrolli_makset(opilase_id, valitud_kuu):
+                salvesta_makse(opilase_id, valitud_kuu, makstud)
 
             with staatus:
                 if makstud:
