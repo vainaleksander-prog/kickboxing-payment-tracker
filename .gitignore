@@ -3,4 +3,5 @@ kickboxing.db
 __pycache__/
 .venv/
 .env
-.streamlit/secrets.toml.vscode/
+.streamlit/
+.vscode/
